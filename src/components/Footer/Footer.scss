@@ -1,0 +1,84 @@
+@use '../../utilities//variables.scss' as var;
+
+.footer{
+    margin-top: 5rem;
+    background-color: var.$color_footer;
+    color: var.$color_text_inverted;
+    display: flex;
+    gap: 3rem;
+    flex-direction: column;
+    padding: 5rem;
+
+
+    .footer_links{
+        display: flex;
+        justify-content: space-between;
+
+        .first_links{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            font-weight: 700;
+
+            h5{
+                font-size: 1.1rem;
+            }
+
+            ul{
+                padding: 0;
+
+                li{
+                    .links{
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+        .second_links{
+            display: flex;
+            flex-direction: column;
+            font-weight: 700;
+            /* padding-right: 5rem; */
+            
+            h5{
+                font-size: 1.1rem;
+            }
+
+            ul{
+                padding: 0;
+                display: flex;
+                gap: 1rem;
+
+                li{
+                    a{
+                        font-size: 1.8rem;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+    }
+    .small_links{
+        display: flex;
+        justify-content: space-between;
+
+        .copy{
+            .links{
+                color: #fff;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .footer_links{
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .small_links{
+        flex-direction: column;
+        gap: 1rem;
+    }
+}

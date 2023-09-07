@@ -1,0 +1,263 @@
+@use "../../utilities/variables.scss" as var;
+
+
+.panda_display_container{
+    margin-top: 5rem;
+    height: 500px;
+    background-image: url("../../assets/images/pandaads_home.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    .panda_display{
+        position: absolute;
+        bottom: 10%;
+        padding: 2rem;
+        width: fit-content;
+
+        h1{
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 1px 2px 3px #000;
+        }
+        p{
+            font-size: 1.1rem;
+            color: #fff;
+            text-shadow: 1px 1px 2px #000;
+
+        }
+        button{
+            background-color: var.$color_primary_500;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            color: #fff;
+            font-weight: 600;
+            transition: all ease-in-out 300ms;
+        }
+        button:hover{
+            background-color: var.$color_primary_700;
+        }
+    }
+    
+}
+
+.tap_container{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 3rem;
+    justify-items: center;
+    align-items: center;
+    padding: 5rem;
+    background-color: #f1f1f1;
+
+    .tap_image{
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+
+        img{
+            object-fit: cover;
+            width: 600px;
+        }
+    }
+
+    .tap_content{
+        h1,h4{
+            color: #3d3d3d;
+            font-weight: 700;
+        }
+        p{
+            font-weight: 500;
+        }
+    }
+}
+
+.handheld{
+    background-color: #fff;
+}
+
+.worked{
+    background-color: #f1f1f1;
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h2{
+        font-weight: 700;
+        color: #3d3d3d;
+    }
+
+    .worked_logo{
+        display: flex;
+        flex-wrap: wrap;
+        width: 800px;
+
+        img{
+            display: block;
+            width: 130px;
+        }
+    }
+}
+
+.panda_form_container{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-items: center;
+    gap: 3rem;
+    padding: 5rem 0rem;
+
+    .panda_form_image{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img{
+            width: 600px;
+        }
+    }
+
+    .panda_form{
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+
+        h1{
+            font-weight: 600;
+            color: #3d3d3d;
+            font-size: 3rem;
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+
+            input, select{
+                padding: .3rem .5rem;
+                border-radius: .3rem;
+                border: 1px solid;
+                border-color: #ccc;
+                margin-bottom: 1rem;
+            }
+            input:focus, select:focus{
+                outline: 1px solid #ccc;
+            }
+            input[type="submit"]{
+                width: fit-content;
+                padding: .5rem 2rem;
+                border: none;
+                border-radius: 2rem;
+                font-size: 1.2rem;
+                font-weight: 500;
+                color: #fff;
+                background-color: var.$color_primary_500;
+            }
+            input[type="submit"]:hover{
+                background-color: var.$color_primary_600;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 1200px){
+    .tap_image{
+        width: 400px;
+    }
+
+    .panda_form_container{
+        grid-template-columns: 100%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .worked{
+        padding: 2rem;
+
+        .worked_logo {
+            width: 600px;
+    
+            img{
+                width: 100px;
+            }
+        }
+    }
+    .tap_container{
+        grid-template-columns: 100%;
+        
+        .tap_image{
+            width: 400px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px){
+    .panda_display_container{
+
+        .panda_display{
+            h1{
+                font-size: 2rem;
+            }
+        }
+    }
+
+    .panda_form_container{
+
+        .panda_form_image{
+            img{
+                width: 400px;
+            }
+        }
+
+        .panda_form{
+            h1{
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 650px){
+    .worked{
+        .worked_logo{
+            width: 400px;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .worked{
+        .worked_logo{
+            width: 200px;
+        }
+    }
+
+    .panda_form_container{
+        padding: 2rem;
+        .panda_form_image{
+            width: 300px;
+        }
+    }
+
+    .tap_container{
+        .tap_image{
+            img{
+                width: 300px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .panda_form_container{
+        .panda_form_image{
+            img{
+                width: 200px;
+            }
+        }
+    }
+}

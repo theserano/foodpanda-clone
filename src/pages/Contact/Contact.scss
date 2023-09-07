@@ -1,0 +1,90 @@
+@use "../../utilities/variables.scss" as var;
+
+
+
+.contact_image{
+    background-image: url('../../assets/images/optimistic-carefree-dark-skinned-young-woman-holds-modern-cellular-sends-messages-browses-webpage.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.contact_form{
+    margin: 5rem 0rem;
+    padding: 0rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 3rem;
+
+    .contact_input{
+        display: flex;
+        gap: 2rem;
+
+        input{
+            padding: .5rem 1rem;
+            border: 1px solid #a0a0a0;
+            border-radius: 1rem;
+            width: 40%;
+        }
+        input:focus{
+            outline: 1px solid #a0a0a0;
+        }
+    }
+
+    textarea{
+        border: 1px solid #a0a0a0;
+        border-radius: 1rem;
+        padding: 1rem;
+        width: 83%;
+    }
+    input[type="submit"]{
+        width: fit-content;
+        padding: 1rem 2rem;
+        background-color: transparent;
+        border: 2px solid;
+        border-radius: 3rem;
+        border-color: var.$color_primary_500;
+        color: var.$color_primary_500;
+        font-weight: 500;
+        transition: all ease-in-out 300ms;
+    }
+    input[type="submit"]:hover{
+        background-color: var.$color_primary_500;
+        color: #fff;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .contact_form{
+        padding: 0rem 2rem;
+        gap: 1.5rem;
+
+        .contact_input{
+            flex-direction: column;
+            gap: 1.5rem;
+
+            input{
+                width: 80%;
+            }
+        }
+        textarea{
+            height: 100px;
+        }
+    }
+}
+@media screen and (max-width: 450px) {
+    .contact_form{
+        padding: 0rem 1rem;
+
+        .contact_input{
+            input{
+                width: 100%;
+            }
+        }
+        textarea{
+            height: 100px;
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,60 @@
+@use "../../utilities/variables.scss" as var;
+
+
+
+.about_image{
+    background-image: url('../../assets/images/foodpanda-about.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.about_text{
+
+    p{
+        line-height: 1.5;
+        width: 800px;
+        font-size: 1.1rem;
+    }
+}
+
+.value{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 10rem;
+
+    .value_links{
+        border: 2px solid #000;
+        border-radius: 2rem;
+        padding: 1rem;
+        color: var.$color_primary_500;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all ease-in-out 300ms;
+    }
+
+    .value_links:hover{
+        background-color: #000;
+        color: #fff;
+    }
+
+}
+
+.value_card_container{
+    display: flex;
+    gap: 13rem;
+    width: 100%;
+    overflow: hidden;
+    padding: 2rem;
+
+    
+    .value_card{
+        opacity: 0;
+    }
+}
+
+.value_card.card_active{
+    opacity: 1;
+}

@@ -1,0 +1,118 @@
+@use "../../utilities/variables.scss" as var;
+
+.card_display{
+    display: grid;
+    gap: 4rem;
+    grid-template-columns: 50% 50%;
+    padding: 10rem 0rem 2rem;
+
+    .card_image{
+        overflow: hidden;
+        width: 600px;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        
+        img{
+            object-fit: cover;
+            width: 600px;
+        }
+    }
+    
+    .card_content{
+        
+        .card_content_header{
+            width: 500px;
+            font-weight: 700;
+            color: var.$color_text;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+            line-height: 1;
+        }
+
+        .card_content_text{
+            width: 500px;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .card_content_button{
+            border: none;
+            border-radius: 3rem;
+            padding: .5rem 2rem;
+            background-color: var.$color_primary_500;
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        .card_content_button:hover {
+            background-color: var.$color_primary_700;
+        }
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .card_display{
+
+        .card_image{
+            width: 400px;
+            display: flex;
+            justify-content: center;
+            
+            img{
+                width: 400px;
+            }
+        }
+        
+        .card_content{
+            .card_content_header{
+                width: 400px;
+                font-size: 2rem;
+            }
+
+            .card_content_text{
+                width: 400px;
+            }
+        }
+        
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .card_display{
+        padding: 10rem 0rem 0rem 0rem;
+        grid-template-columns: 100%;
+        gap: 1rem;
+        justify-items: center;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .card_display{
+
+    .card_image{
+        width: 300px;
+        
+        img{
+            width: 300px;
+        }
+    }
+
+    .card_content{
+        .card_content_header{
+            width: 300px;
+            font-size: 1.5rem;
+        }
+
+        .card_content_text{
+            width: 300px;
+            font-size: 1rem;
+        }
+        .card_content_button{
+            font-size: 1rem;
+            padding: .3rem .8rem;
+        }
+    }
+
+    }
+}

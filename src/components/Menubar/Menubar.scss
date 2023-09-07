@@ -1,0 +1,129 @@
+@use '../../utilities/variables.scss' as var;
+
+img {
+    object-fit: contain;
+}
+
+.menubar {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: baseline;
+    padding: 1.3rem 4rem;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    background-color: #fff;
+
+    .foodpanda_logo{
+        img{
+            width: 180px;
+        }
+       
+    }
+
+    .foodpanda_nav_links{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-left: 10rem;
+
+        .nav_links{
+            display: flex;
+            gap: 1rem;
+            justify-content: space-between;
+            align-items: baseline;
+            
+            li{
+                .links{
+                    color: var.$text_dark;
+                    font-weight: 600;
+                    padding: 1.2rem 1rem;
+                    border-top: 2px solid;
+                    border-top-color: transparent;
+                    transition: border-color ease-in-out 300ms;
+                }
+                .links:hover {
+                    border-top-color: var.$color_pink;
+                }
+            }
+        }
+    }
+
+
+}
+
+
+@media screen and (max-width: 1067px) {
+    .menubar{
+        flex-direction: column;
+        justify-content: flex-start;
+
+        .foodpanda_nav_links{
+            flex-direction: row;
+            margin-left: 0rem;
+            padding-top: 1.5rem;
+        }
+    }
+}
+
+@media screen and (max-width: 906px) {
+    .menubar{
+        padding: .5rem;
+        .foodpanda_logo{
+            img{
+                width: 100px;
+            }
+        }
+
+        .foodpanda_nav_links{
+           
+
+            .nav_links{
+                gap: 0rem;
+                padding: 0;
+
+                li{
+                    .links{
+                        padding: .5rem;
+                    }
+                }
+
+            }
+            .btn_nav_links{
+                font-size: .8rem;
+                padding: .5rem;
+            }
+            .btn_nav_links_Search{
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .menubar{
+
+        /* .foodpanda_logo{
+            display: none;
+        } */
+        .foodpanda_nav_links{
+            flex-direction: column;
+        }
+
+    }
+}
+
+@media screen and (max-width: 410px) {
+    .menubar{
+        .foodpanda_nav_links{
+            .nav_links{
+                li{
+                    .links{
+                        font-size: .8rem;
+                    }
+                }
+            }
+        }
+    }
+}
