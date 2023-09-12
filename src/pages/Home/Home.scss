@@ -25,7 +25,11 @@
 }
 
 .home_first_text{
-    padding: 5rem 0rem;
+    padding: 5rem;
+    margin-top: 5rem;
+    overflow-x: hidden;
+    opacity: 0;
+    transition: opacity ease-in-out 2s;
      p{
         font-size: 2.3rem;
         font-weight: 700;
@@ -35,6 +39,10 @@
         margin: 0;
         color: var.$color_text;
      }
+}
+.home_text_active{
+    opacity: 1;
+    transition: opacity ease-in-out 2s;
 }
 
 .home_card_display{
@@ -94,6 +102,7 @@
     font-size: 1.1rem;
 }
 
+
 @media screen and (max-width: 1000px) {
     .home_card_display{
         grid-template-columns: 100%;
@@ -126,6 +135,7 @@
         }
     }
 }
+
 
 @media screen and (max-width: 900px) {
     .home_video{

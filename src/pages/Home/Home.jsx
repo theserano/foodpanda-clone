@@ -11,8 +11,23 @@ import Carousel from "../../components/Carousel/Carousel";
 import {IoIosArrowForward} from "react-icons/io";
 import Image_last from "../../assets/images/foodpanda-home-3.jpg";
 import Footer from "../../components/Footer/Footer";
+import { useEffect, useRef, useState } from "react";
 
 const Home = () => {
+
+  const cardRef = useRef(null);
+  const [textVisible, setTextVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      setTextVisible(entry.isIntersecting)
+    })
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+  }, [])
+
   return (
     <div className="home">
       <Menubar />
@@ -38,7 +53,7 @@ const Home = () => {
       </div>
 
       {/* text explanation */}
-      <div className="home_first_text container">
+      <div className={`home_first_text ${textVisible ? "home_text_active" : ""}`} ref={cardRef}>
         <p>
           We&rsquo;re here to help you live life the panda way. Spend more time
           doing what you love{" "}
@@ -50,14 +65,14 @@ const Home = () => {
       </div>
 
       {/* home cards */}
-      <Card
-        image={image1}
-        header={"Meet the next generation of delivery!"}
-        text={
-          "What makes quick commerce quick? We stand for swift personalized delivery solutions for our customers, partners and employees. Learn how we empower authentic lifestyles and drive innovation across the globe."
-        }
-        button={"read our story"}
-      />
+        <Card
+          image={image1}
+          header={"Meet the next generation of delivery!"}
+          text={
+            "What makes quick commerce quick? We stand for swift personalized delivery solutions for our customers, partners and employees. Learn how we empower authentic lifestyles and drive innovation across the globe."
+          }
+          button={"read our story"}
+        />
 
       {/* Home card with different positions */}
       <div className="home_card_display container">
