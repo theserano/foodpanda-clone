@@ -12,6 +12,7 @@ import {IoIosArrowForward} from "react-icons/io";
 import Image_last from "../../assets/images/foodpanda-home-3.jpg";
 import Footer from "../../components/Footer/Footer";
 import { useEffect, useRef, useState } from "react";
+// import Loading from "../../components/loading/Loading";
 
 const Home = () => {
 
